@@ -790,13 +790,13 @@ export const initialPayments: PaymentRecord[] = [
 export const initialSettings: AcademySettings = {
   academyName: "THE GAME OF MAKEUP",
   subtitle: "ACADEMY MANAGEMENT SUITE",
-  contactEmail: "admissions@thegameofmakeup.com",
-  contactPhone: "+91 98200 45678",
-  address: "Suite 401-404, The Grand Artistry Tower, Bandra West, Mumbai 400050, India",
-  gstNumber: "27AABCT8891P1Z4",
+  contactEmail: "admissions.demo@thegameofmakeup.com",
+  contactPhone: "+91 98200 00000 (Demo Center)",
+  address: "Demonstration Studio Campus, Bandra West, Mumbai, Maharashtra 400050, India",
+  gstNumber: "27AABCT0000A1Z5 (Demo / Sample)",
   currency: "INR",
   currencySymbol: "₹",
   receiptPrefix: "GOM-RCP",
   receiptNotes:
-    "This simulated electronic receipt is issued by THE GAME OF MAKEUP Academy for demo purposes. Fees paid towards course enrollments are non-refundable after kit distribution. Official student kits remain academy property until course commencement.",
+    "This simulated electronic receipt is issued by THE GAME OF MAKEUP Academy for client demo purposes only. Simulated transaction record — no real monetary payment has been collected or processed. All student records and payments represent fictional mock demonstration data.",
 };
