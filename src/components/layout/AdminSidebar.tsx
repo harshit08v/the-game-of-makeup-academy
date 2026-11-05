@@ -162,6 +162,9 @@ export function AdminSidebar({ onItemClick }: AdminSidebarProps) {
         <div className="text-[10px] text-charcoal-400 mt-0.5">
           Designed for Luxury Beauty Academies
         </div>
+        <div className="mt-2.5 pt-2 border-t border-[#EAE1D3] text-[10px] tracking-wide text-champagne-700/90 font-medium">
+          Designed &amp; Developed by Harshit Verma
+        </div>
       </div>
     </aside>
   );

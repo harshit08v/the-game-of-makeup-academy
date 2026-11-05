@@ -5,6 +5,7 @@ import { useAcademy } from "@/lib/store";
 import { Navbar } from "@/components/layout/Navbar";
 import { AdminSidebar } from "@/components/layout/AdminSidebar";
 import { StudentSidebar } from "@/components/layout/StudentSidebar";
+import { DemoLoginModal } from "@/components/common/DemoLoginModal";
 
 // Admin Views
 import { OverviewDashboard } from "@/components/admin/OverviewDashboard";
@@ -34,6 +35,7 @@ export default function HomePage() {
   } = useAcademy();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDemoLoginOpen, setIsDemoLoginOpen] = useState(false);
 
   // Quick navigation handlers for Overview shortcuts
   const handleOpenNewAdmission = () => {
@@ -54,15 +56,23 @@ export default function HomePage() {
 
   if (!isHydrated) {
     return (
-      <div className="min-h-screen bg-[#FAF8F5] flex flex-col items-center justify-center space-y-4">
+      <div className="min-h-screen bg-[#FAF8F5] flex flex-col items-center justify-center space-y-3">
         <div className="w-10 h-10 rounded-xl bg-charcoal-950 flex items-center justify-center border border-[#DFD5C6] shadow-md animate-pulse">
           <span className="font-serif text-champagne-400 font-bold text-sm tracking-widest">
             GM
           </span>
         </div>
-        <p className="font-serif text-charcoal-700 text-sm tracking-wide">
-          THE GAME OF MAKEUP
-        </p>
+        <div className="text-center">
+          <p className="font-serif text-charcoal-800 text-sm tracking-wide font-medium">
+            THE GAME OF MAKEUP
+          </p>
+          <p className="text-[10px] text-charcoal-400 uppercase tracking-widest mt-0.5">
+            Academy Management Suite
+          </p>
+        </div>
+        <div className="pt-2 text-[10px] tracking-wide text-champagne-700/80 font-medium">
+          Designed &amp; Developed by Harshit Verma
+        </div>
       </div>
     );
   }
@@ -73,6 +83,7 @@ export default function HomePage() {
       <Navbar
         onMobileMenuToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         onOpenQuickAdmission={handleOpenNewAdmission}
+        onOpenDemoLogin={() => setIsDemoLoginOpen(true)}
       />
 
       {/* Main Body Area */}
@@ -139,11 +150,31 @@ export default function HomePage() {
                 {activeStudentTab === "course" && <StudentCourseView />}
                 {activeStudentTab === "fees" && <StudentFeesView />}
                 {activeStudentTab === "profile" && <StudentProfileView />}
+
+                {/* Student Portal Footer with subtle developer attribution */}
+                <footer className="mt-12 pt-6 border-t border-[#EAE4DC] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-charcoal-500">
+                  <div className="flex items-center gap-2 text-[11px]">
+                    <span className="font-serif font-medium text-charcoal-800">
+                      THE GAME OF MAKEUP
+                    </span>
+                    <span>•</span>
+                    <span>Student Experience Portal</span>
+                  </div>
+                  <div className="text-[11px] tracking-wide text-champagne-700/90 font-medium">
+                    Designed &amp; Developed by Harshit Verma
+                  </div>
+                </footer>
               </>
             )}
           </div>
         </main>
       </div>
+
+      {/* Demo Login & Role Access Modal */}
+      <DemoLoginModal
+        isOpen={isDemoLoginOpen}
+        onClose={() => setIsDemoLoginOpen(false)}
+      />
     </div>
   );
 }

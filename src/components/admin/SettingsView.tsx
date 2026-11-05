@@ -263,6 +263,14 @@ export function SettingsView() {
           </div>
         )}
       </div>
+
+      {/* System Attribution */}
+      <div className="pt-6 border-t border-[#EAE4DC] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-charcoal-500">
+        <span className="text-[11px] text-charcoal-400">THE GAME OF MAKEUP • ACADEMY SUITE v1.2</span>
+        <span className="text-[11px] text-champagne-700/90 font-medium">
+          Designed &amp; Developed by Harshit Verma
+        </span>
+      </div>
     </div>
   );
 }

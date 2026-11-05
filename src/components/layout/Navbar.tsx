@@ -12,14 +12,16 @@ import {
   ExternalLink,
   ChevronDown,
   Plus,
+  LogIn,
 } from "lucide-react";
 
 interface NavbarProps {
   onMobileMenuToggle: () => void;
   onOpenQuickAdmission?: () => void;
+  onOpenDemoLogin?: () => void;
 }
 
-export function Navbar({ onMobileMenuToggle, onOpenQuickAdmission }: NavbarProps) {
+export function Navbar({ onMobileMenuToggle, onOpenQuickAdmission, onOpenDemoLogin }: NavbarProps) {
   const {
     role,
     setRole,
@@ -104,6 +106,18 @@ export function Navbar({ onMobileMenuToggle, onOpenQuickAdmission }: NavbarProps
               <span>Student</span>
             </button>
           </div>
+
+          {/* Demo Login / Portal Switcher Gateway Trigger */}
+          {onOpenDemoLogin && (
+            <button
+              onClick={onOpenDemoLogin}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-[#DACFBF] bg-[#FAF8F5] hover:bg-[#F2ECE0] text-xs font-medium text-charcoal-700 hover:text-charcoal-900 transition shadow-sm"
+              title="Open Demo Login Screen"
+            >
+              <LogIn className="w-3.5 h-3.5 text-champagne-600" />
+              <span className="hidden sm:inline">Demo Gateway</span>
+            </button>
+          )}
 
           {/* Student Persona Dropdown (shown when role is Student) */}
           {role === "student" && (

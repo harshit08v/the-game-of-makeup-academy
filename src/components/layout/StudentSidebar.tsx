@@ -137,6 +137,9 @@ export function StudentSidebar({ onItemClick }: StudentSidebarProps) {
         <p className="text-[10px] text-charcoal-400 mt-1 leading-relaxed">
           You are viewing personalized records for this enrolled student.
         </p>
+        <div className="mt-2.5 pt-2 border-t border-[#EAE1D3] text-[10px] tracking-wide text-champagne-700/90 font-medium">
+          Designed &amp; Developed by Harshit Verma
+        </div>
       </div>
     </aside>
   );
